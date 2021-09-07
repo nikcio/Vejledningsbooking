@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+    project-db:
+      image: mcr.microsoft.com/mssql/server:latest
+      user: root
+      env_file: ./docker-configs/ms.sql.env
+      volumes:
+        - project.db:/var/opt/mssql/data
+      restart: always
+      ports:
+        - '50000:1433'
+    
+volumes:
+    project.db:
