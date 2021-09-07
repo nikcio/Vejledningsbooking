@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Vejledningsbooking.Domain.Contexts;
 using Vejledningsbooking.Persistence.Contexts;
 
 namespace Vejledningsbooking
@@ -26,6 +27,7 @@ namespace Vejledningsbooking
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<VejledningsbookingDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultDatabase")));
+            services.AddScoped<IVejledningsbookingDbContext, VejledningsbookingDbContext>();
 
             services.AddRazorPages();
         }

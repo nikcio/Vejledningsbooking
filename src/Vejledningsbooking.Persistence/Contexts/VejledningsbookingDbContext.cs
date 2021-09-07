@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vejledningsbooking.Domain.Contexts;
 using Vejledningsbooking.Domain.Entities;
 
 namespace Vejledningsbooking.Persistence.Contexts
 {
-    public class VejledningsbookingDbContext : DbContext
+    public class VejledningsbookingDbContext : DbContext, IVejledningsbookingDbContext
     {
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<BookingWindow> BookingWindows { get; set; }
@@ -16,6 +17,8 @@ namespace Vejledningsbooking.Persistence.Contexts
         public DbSet<Class> Classes { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+
+        public DbContext Context => this;
 
         public VejledningsbookingDbContext(DbContextOptions<VejledningsbookingDbContext> options) : base(options)
         {
