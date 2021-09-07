@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Vejledningsbooking.Domain.Entities
 {
-    class Teacher
+    public class Teacher : IUser
     {
+        public int Id { get; set; }
+        public IEnumerable<Class> Classes { get; set; }  // SELECT * FROM 
     }
 }

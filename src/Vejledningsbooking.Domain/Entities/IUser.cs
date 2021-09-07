@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Vejledningsbooking.Domain.Entities
 {
-    interface IUser
+    public interface IUser
     {
+        public int Id { get; set; }
     }
 }
