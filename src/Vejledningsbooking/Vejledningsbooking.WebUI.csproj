@@ -5,7 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Vejledningsbooking.Application\Vejledningsbooking.Application.csproj" />
+    <ProjectReference Include="..\Vejledningsbooking.Persistence\Vejledningsbooking.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

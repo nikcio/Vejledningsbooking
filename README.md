@@ -7,3 +7,9 @@ Personer: André, Gustav, Nicklas, Kristian, Kristian, Rasmus, Lui og MoRtEn :)
 
 ## How to start docker databse
 Run this command in a terminal (In the project directory): `docker-compose up -d --build`
+
+## EF core
+[Manage migrations](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli)
+
+* Add changes: `Add-Migration NAME` (Change NAME with the migration name)
+* Update database `update-database`
