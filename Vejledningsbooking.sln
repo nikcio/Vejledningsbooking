@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vejledningsbooking", "Vejledningsbooking\Vejledningsbooking.csproj", "{2597242E-F8CE-41EF-98EE-6FD6030BA457}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vejledningsbooking.WebUI", "Vejledningsbooking\Vejledningsbooking.WebUI.csproj", "{2597242E-F8CE-41EF-98EE-6FD6030BA457}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vejledningsbooking.Infrastucture", "Vejledningsbooking.Infrastucture\Vejledningsbooking.Infrastucture.csproj", "{3F1D4C62-1D9A-401A-B72D-B22B17171F62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vejledningsbooking.Domain", "Vejledningsbooking.Domain\Vejledningsbooking.Domain.csproj", "{FF91CF75-BBDD-47F0-A69A-FEDD3A34B2D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vejledningsbooking.Application", "Vejledningsbooking.Application\Vejledningsbooking.Application.csproj", "{742F693E-2BC6-4169-8270-5A226BFDE728}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vejledningsbooking.Persistence", "Vejledningsbooking.Persistence\Vejledningsbooking.Persistence.csproj", "{9EE71382-907A-4B6E-ADE5-44E234A8B379}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{2597242E-F8CE-41EF-98EE-6FD6030BA457}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2597242E-F8CE-41EF-98EE-6FD6030BA457}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2597242E-F8CE-41EF-98EE-6FD6030BA457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F1D4C62-1D9A-401A-B72D-B22B17171F62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F1D4C62-1D9A-401A-B72D-B22B17171F62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F1D4C62-1D9A-401A-B72D-B22B17171F62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F1D4C62-1D9A-401A-B72D-B22B17171F62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF91CF75-BBDD-47F0-A69A-FEDD3A34B2D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF91CF75-BBDD-47F0-A69A-FEDD3A34B2D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF91CF75-BBDD-47F0-A69A-FEDD3A34B2D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF91CF75-BBDD-47F0-A69A-FEDD3A34B2D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{742F693E-2BC6-4169-8270-5A226BFDE728}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{742F693E-2BC6-4169-8270-5A226BFDE728}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{742F693E-2BC6-4169-8270-5A226BFDE728}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{742F693E-2BC6-4169-8270-5A226BFDE728}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EE71382-907A-4B6E-ADE5-44E234A8B379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EE71382-907A-4B6E-ADE5-44E234A8B379}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EE71382-907A-4B6E-ADE5-44E234A8B379}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EE71382-907A-4B6E-ADE5-44E234A8B379}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
