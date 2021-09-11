@@ -10,8 +10,9 @@ namespace Vejledningsbooking.Domain.Entities
     {
         public int Id { get; set; }
         public string ClassName { get; set; }
-        public Calender Calender { get; set; }
-        public IEnumerable<Student> Students { get; set; }
-        public IEnumerable<Teacher> Teachers { get; set; }
+        public int CalenderId { get; set; }
+        public virtual Calender Calender { get; set; }
+        public virtual IEnumerable<Student> Students { get; set; }
+        public virtual IEnumerable<Teacher> Teachers { get; set; }
     }
 }

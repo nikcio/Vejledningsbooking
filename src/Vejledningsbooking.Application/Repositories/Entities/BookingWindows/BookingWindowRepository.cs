@@ -12,7 +12,7 @@ namespace Vejledningsbooking.Application.Repositories.Entities.BookingWindows
 {
     public class BookingWindowRepository : BaseAsyncRepository<BookingWindow>, IBookingWindowRepository
     {
-        public BookingWindowRepository(IVejledningsbookingDbContext dbContext, ILogger logger) : base(dbContext, logger)
+        public BookingWindowRepository(IVejledningsbookingDbContext dbContext, ILogger<BookingWindowRepository> logger) : base(dbContext, logger)
         {
         }
     }

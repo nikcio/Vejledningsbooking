@@ -11,7 +11,9 @@ namespace Vejledningsbooking.Domain.Entities
         public int Id { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
-        public BookingWindow BookingWindow { get; set; }
-        public Student Student { get; set; }
+        public int BookingWindowId { get; set; }
+        public int StudentId { get; set; }
+        public virtual BookingWindow BookingWindow { get; set; }
+        public virtual Student Student { get; set; }
     }
 }

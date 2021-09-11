@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Vejledningsbooking.Domain.Entities;
 
-namespace Vejledningsbooking.Application.Services.Calenders
+namespace Vejledningsbooking.Application.Services.Entities.Calenders
 {
     public interface ICalenderService
     {

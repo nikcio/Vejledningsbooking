@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Vejledningsbooking.Application.UnitOfWorks.Entities.Calenders;
 using Vejledningsbooking.Domain.Entities;
 
-namespace Vejledningsbooking.Application.Services.Calenders
+namespace Vejledningsbooking.Application.Services.Entities.Calenders
 {
     public class CalenderService : ICalenderService
     {

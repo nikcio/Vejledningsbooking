@@ -22,7 +22,7 @@ namespace Vejledningsbooking.Application.Repositories.Bases
             this.logger = logger;
         }
 
-        public async Task<bool> Add(TEntity entity)
+        public virtual async Task<bool> Add(TEntity entity)
         {
             try
             {
@@ -36,7 +36,7 @@ namespace Vejledningsbooking.Application.Repositories.Bases
             }
         }
 
-        public async Task<IEnumerable<TEntity>> GetAll()
+        public virtual async Task<IEnumerable<TEntity>> GetAll()
         {
             try
             {
@@ -49,7 +49,7 @@ namespace Vejledningsbooking.Application.Repositories.Bases
             }
         }
 
-        public async Task<TEntity> GetById(object id)
+        public virtual async Task<TEntity> GetById(object id)
         {
             try
             {
@@ -62,7 +62,7 @@ namespace Vejledningsbooking.Application.Repositories.Bases
             }
         }
 
-        public Task<bool> Remove(TEntity entity)
+        public virtual Task<bool> Remove(TEntity entity)
         {
             try
             {

@@ -29,15 +29,18 @@ namespace Vejledningsbooking.Persistence.Contexts
         {
             modelBuilder.Entity<Booking>()
                 .HasOne(b => b.Student)
-                .WithMany(p => p.Bookings);
+                .WithMany(p => p.Bookings)
+                .HasForeignKey(k => k.StudentId);
 
             modelBuilder.Entity<Booking>()
                 .HasOne(b => b.BookingWindow)
-                .WithMany(p => p.Bookings);
+                .WithMany(p => p.Bookings)
+                .HasForeignKey(k => k.BookingWindowId);
 
             modelBuilder.Entity<BookingWindow>()
                 .HasOne(p => p.Calender)
-                .WithMany(p => p.BookingWindows);
+                .WithMany(p => p.BookingWindows)
+                .HasForeignKey(k => k.CalenderId);
 
             modelBuilder.Entity<BookingWindow>()
                 .HasMany(p => p.Bookings)

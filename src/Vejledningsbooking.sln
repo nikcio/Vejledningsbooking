@@ -3,15 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vejledningsbooking.WebUI", "Vejledningsbooking\Vejledningsbooking.WebUI.csproj", "{2597242E-F8CE-41EF-98EE-6FD6030BA457}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vejledningsbooking.WebUI", "Vejledningsbooking\Vejledningsbooking.WebUI.csproj", "{2597242E-F8CE-41EF-98EE-6FD6030BA457}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vejledningsbooking.Infrastucture", "Vejledningsbooking.Infrastucture\Vejledningsbooking.Infrastucture.csproj", "{3F1D4C62-1D9A-401A-B72D-B22B17171F62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vejledningsbooking.Infrastucture", "Vejledningsbooking.Infrastucture\Vejledningsbooking.Infrastucture.csproj", "{3F1D4C62-1D9A-401A-B72D-B22B17171F62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vejledningsbooking.Domain", "Vejledningsbooking.Domain\Vejledningsbooking.Domain.csproj", "{FF91CF75-BBDD-47F0-A69A-FEDD3A34B2D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vejledningsbooking.Domain", "Vejledningsbooking.Domain\Vejledningsbooking.Domain.csproj", "{FF91CF75-BBDD-47F0-A69A-FEDD3A34B2D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vejledningsbooking.Application", "Vejledningsbooking.Application\Vejledningsbooking.Application.csproj", "{742F693E-2BC6-4169-8270-5A226BFDE728}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vejledningsbooking.Application", "Vejledningsbooking.Application\Vejledningsbooking.Application.csproj", "{742F693E-2BC6-4169-8270-5A226BFDE728}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vejledningsbooking.Persistence", "Vejledningsbooking.Persistence\Vejledningsbooking.Persistence.csproj", "{9EE71382-907A-4B6E-ADE5-44E234A8B379}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vejledningsbooking.Persistence", "Vejledningsbooking.Persistence\Vejledningsbooking.Persistence.csproj", "{9EE71382-907A-4B6E-ADE5-44E234A8B379}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{615B672C-5A0F-4C95-9386-27D2BB4EF6D9}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VejledningsBooking.Api", "VejledningsBooking.Api\VejledningsBooking.Api.csproj", "{F9B75CD2-766A-4D9E-ADEE-05A7B45E7EFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +46,10 @@ Global
 		{9EE71382-907A-4B6E-ADE5-44E234A8B379}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EE71382-907A-4B6E-ADE5-44E234A8B379}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EE71382-907A-4B6E-ADE5-44E234A8B379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9B75CD2-766A-4D9E-ADEE-05A7B45E7EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9B75CD2-766A-4D9E-ADEE-05A7B45E7EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9B75CD2-766A-4D9E-ADEE-05A7B45E7EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9B75CD2-766A-4D9E-ADEE-05A7B45E7EFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

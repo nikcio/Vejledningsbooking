@@ -13,8 +13,14 @@ namespace Vejledningsbooking.Application.Repositories.Entities.Calenders
 {
     public class CalenderRepository : BaseAsyncRepository<Calender>, ICalenderRepository
     {
-        public CalenderRepository(IVejledningsbookingDbContext dbContext, ILogger logger) : base(dbContext, logger)
+        public CalenderRepository(IVejledningsbookingDbContext dbContext, ILogger<CalenderRepository> logger) : base(dbContext, logger)
         { }
 
+        public async override Task<Calender> GetById(object id)
+        {
+            var result = await base.GetById(id);
+            await Context.Context.Entry(result).Collection(p => p.BookingWindows).Query().Include(b => b.Bookings).LoadAsync();
+            return result;
+        }
     }
 }

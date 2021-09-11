@@ -12,7 +12,8 @@ namespace Vejledningsbooking.Domain.Entities
         public DateTime StartTime { get; set; } 
         public DateTime EndTime { get; set; } // start- and sluttimedot for a bookingvindue 
 
-        public IEnumerable<Booking> Bookings { get; set; }
-        public Calender Calender { get; set; }
+        public virtual IEnumerable<Booking> Bookings { get; set; }
+        public int CalenderId { get; set; }
+        public virtual Calender Calender { get; set; }
     }
 }

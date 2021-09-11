@@ -10,7 +10,7 @@ namespace Vejledningsbooking.Domain.Entities
     {
         public int Id { get; set; }
         public int ClassId { get; set; }
-        public Class Class { get; set; }
-        public IEnumerable<BookingWindow> BookingWindows { get; set; }
+        public virtual Class Class { get; set; }
+        public virtual IEnumerable<BookingWindow> BookingWindows { get; set; }
     }
 }

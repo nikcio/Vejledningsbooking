@@ -12,7 +12,7 @@ namespace Vejledningsbooking.Application.Repositories.Entities.Classes
 {
     public class ClassRepository : BaseAsyncRepository<Class>, IClassRepository
     {
-        public ClassRepository(IVejledningsbookingDbContext dbContext, ILogger logger) : base(dbContext, logger)
+        public ClassRepository(IVejledningsbookingDbContext dbContext, ILogger<ClassRepository> logger) : base(dbContext, logger)
         {
         }
     }
