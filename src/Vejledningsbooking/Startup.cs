@@ -1,13 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Vejledningsbooking.Application;
-using Vejledningsbooking.Application.UnitOfWorks;
-using Vejledningsbooking.Domain.Contexts;
-using Vejledningsbooking.Persistence.Contexts;
+using Vejledningsbooking.Persistence;
 
 namespace Vejledningsbooking
 {
@@ -23,8 +20,7 @@ namespace Vejledningsbooking
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<VejledningsbookingDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultDatabase")));
-            services.AddScoped<IVejledningsbookingDbContext, VejledningsbookingDbContext>();
+            services.AddDbConfiguration(Configuration);
 
             services.AddApplication();
 

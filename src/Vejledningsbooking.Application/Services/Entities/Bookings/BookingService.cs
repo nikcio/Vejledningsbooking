@@ -31,11 +31,7 @@ namespace Vejledningsbooking.Application.Services.Entities.Bookings
             var bookingWindow = calender.BookingWindows.FirstOrDefault(window => window.Id == bookingWindowId);
             if (calender != null && 
                 bookingWindow != null && 
-                bookingWindow.StartTime < booking.StartTime &&
-                bookingWindow.EndTime > booking.EndTime &&
-                !bookingWindow.Bookings.Any(item => 
-                    (item.StartTime <= booking.StartTime && !(item.EndTime < booking.StartTime)) || 
-                    (item.StartTime < booking.EndTime))
+                bookingWindow.IsBookingVaild(booking)
                 )
             {
                 booking.BookingWindowId = bookingWindowId;

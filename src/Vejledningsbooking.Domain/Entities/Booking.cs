@@ -15,5 +15,11 @@ namespace Vejledningsbooking.Domain.Entities
         public int StudentId { get; set; }
         public virtual BookingWindow BookingWindow { get; set; }
         public virtual Student Student { get; set; }
+
+        public bool IsOverlapping(Booking booking)
+        {
+            return (StartTime <= booking.StartTime && !(EndTime < booking.StartTime)) ||
+                   (StartTime < booking.EndTime);
+        }
     }
 }

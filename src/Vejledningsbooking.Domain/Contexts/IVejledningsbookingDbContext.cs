@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Vejledningsbooking.Domain.Entities;
 
 namespace Vejledningsbooking.Domain.Contexts
 {
-    public interface IVejledningsbookingDbContext : IDbContext
+    public interface IVejledningsbookingDbContext : IVejledningsbookingDbContextBase, IDisposable
     {
-        DbSet<Booking> Bookings { get; set; }
-        DbSet<BookingWindow> BookingWindows { get; set; }
-        DbSet<Calender> Calenders { get; set; }
-        DbSet<Class> Classes { get; set; }
-        DbSet<Student> Students { get; set; }
-        DbSet<Teacher> Teachers { get; set; }
+        DbContext Context { get; }
+
+        public new void Dispose()
+        {
+            Context.Dispose();
+        }
     }
 }
