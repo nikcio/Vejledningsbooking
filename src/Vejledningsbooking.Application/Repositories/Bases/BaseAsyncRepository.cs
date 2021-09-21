@@ -3,7 +3,6 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Vejledningsbooking.Domain.Contexts;
 
@@ -11,18 +10,16 @@ namespace Vejledningsbooking.Application.Repositories.Bases
 {
     public class BaseAsyncRepository<TEntity> : IBaseAsyncRepository<TEntity> where TEntity : class
     {
-        protected IVejledningsbookingDbContext Context { get; }
         internal DbSet<TEntity> DbSet;
         public readonly ILogger logger;
 
         public BaseAsyncRepository(IVejledningsbookingDbContext dbContext, ILogger logger)
         {
-            Context = dbContext;
             DbSet = dbContext.Context.Set<TEntity>();
             this.logger = logger;
         }
 
-        public virtual async Task<bool> Add(TEntity entity)
+        public async virtual Task<bool> Add(TEntity entity)
         {
             try
             {
@@ -36,7 +33,7 @@ namespace Vejledningsbooking.Application.Repositories.Bases
             }
         }
 
-        public virtual async Task<IEnumerable<TEntity>> GetAll()
+        public async virtual Task<IEnumerable<TEntity>> GetAll()
         {
             try
             {
@@ -49,7 +46,12 @@ namespace Vejledningsbooking.Application.Repositories.Bases
             }
         }
 
-        public virtual async Task<TEntity> GetById(object id)
+        public async virtual Task<TEntity> GetById(int id)
+        {
+            return await GetByIdBase(id);
+        }
+
+        protected async virtual Task<TEntity> GetByIdBase(object id)
         {
             try
             {
@@ -75,5 +77,6 @@ namespace Vejledningsbooking.Application.Repositories.Bases
                 return null;
             }
         }
+
     }
 }

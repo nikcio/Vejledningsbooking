@@ -66,6 +66,10 @@ namespace Vejledningsbooking.Persistence.Contexts
             modelBuilder.Entity<Class>()
                 .HasMany(p => p.Students)
                 .WithMany(p => p.Classes);
+
+            modelBuilder.Entity<Class>()
+                .Property(p => p.ClassName)
+                .HasMaxLength(100);
         }
     }
 }

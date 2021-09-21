@@ -13,13 +13,23 @@ namespace Vejledningsbooking.Application.Repositories.Entities.Calenders
 {
     public class CalenderRepository : BaseAsyncRepository<Calender>, ICalenderRepository
     {
-        public CalenderRepository(IVejledningsbookingDbContext dbContext, ILogger<CalenderRepository> logger) : base(dbContext, logger)
-        { }
+        private readonly IVejledningsbookingDbContext dbContext;
 
-        public async override Task<Calender> GetById(object id)
+        public CalenderRepository(IVejledningsbookingDbContext dbContext, ILogger<CalenderRepository> logger) : base(dbContext, logger)
+        {
+            this.dbContext = dbContext;
+        }
+
+        public async override Task<Calender> GetById(int id)
         {
             var result = await base.GetById(id);
-            await Context.Context.Entry(result).Collection(p => p.BookingWindows).Query().Include(b => b.Bookings).LoadAsync();
+
+            await dbContext.Context.Entry(result)
+                .Collection(p => p.BookingWindows)
+                .Query()
+                .Include(b => b.Bookings)
+                .LoadAsync();
+
             return result;
         }
     }

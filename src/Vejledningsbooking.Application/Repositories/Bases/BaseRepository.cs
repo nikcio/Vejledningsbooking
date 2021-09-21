@@ -11,13 +11,11 @@ namespace Vejledningsbooking.Application.Repositories.Bases
 {
     public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
     {
-        protected IVejledningsbookingDbContext Context { get; }
         internal DbSet<TEntity> DbSet;
         public readonly ILogger logger;
 
         public BaseRepository(IVejledningsbookingDbContext dbContext, ILogger logger)
         {
-            Context = dbContext;
             DbSet = dbContext.Context.Set<TEntity>();
             this.logger = logger;
         }

@@ -7,7 +7,7 @@ namespace Vejledningsbooking.Application.Repositories.Bases
     {
         Task<bool> Add(TEntity entity);
         Task<IEnumerable<TEntity>> GetAll();
-        Task<TEntity> GetById(object id);
+        Task<TEntity> GetById(int id);
         Task<bool> Remove(TEntity entity);
     }
 }

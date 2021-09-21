@@ -41,5 +41,22 @@ namespace Vejledningsbooking.Application.Services.Entities.Bookings
             }
             return false;
         }
+
+        public async Task<Booking> GetBooking(int bookingId)
+        {
+            return await bookingUoW.bookingRepository.GetById(bookingId);
+        }
+
+        public async Task<bool> UpdateBooking(Booking booking)
+        {
+            if(booking == null)
+            {
+                return false;
+            }
+            
+            await bookingUoW.CompleteAsync();
+
+            return true;
+        }
     }
 }
