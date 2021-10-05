@@ -6,7 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Vejledningsbooking.Application;
 using Vejledningsbooking.Persistence;
 
-namespace Vejledningsbooking
+namespace Vejledningsbooking.WebUI
 {
     public class Startup
     {

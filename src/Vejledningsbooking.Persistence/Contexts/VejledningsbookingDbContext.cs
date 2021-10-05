@@ -33,6 +33,10 @@ namespace Vejledningsbooking.Persistence.Contexts
                 .HasForeignKey(k => k.StudentId);
 
             modelBuilder.Entity<Booking>()
+                .Property(p => p.Rowversion)
+                .IsRowVersion();
+
+            modelBuilder.Entity<Booking>()
                 .HasOne(b => b.BookingWindow)
                 .WithMany(p => p.Bookings)
                 .HasForeignKey(k => k.BookingWindowId);
@@ -46,6 +50,10 @@ namespace Vejledningsbooking.Persistence.Contexts
                 .HasMany(p => p.Bookings)
                 .WithOne(p => p.BookingWindow);
 
+            modelBuilder.Entity<BookingWindow>()
+                .Property(p => p.Rowversion)
+                .IsRowVersion();
+
             modelBuilder.Entity<Calender>()
                 .HasMany(p => p.BookingWindows)
                 .WithOne(p => p.Calender);
@@ -54,6 +62,10 @@ namespace Vejledningsbooking.Persistence.Contexts
                 .HasOne(p => p.Class)
                 .WithOne(p => p.Calender)
                 .HasForeignKey<Calender>(p => p.ClassId);
+
+            modelBuilder.Entity<Calender>()
+                .Property(p => p.Rowversion)
+                .IsRowVersion();
 
             modelBuilder.Entity<Class>()
                 .HasOne(p => p.Calender)
@@ -70,6 +82,18 @@ namespace Vejledningsbooking.Persistence.Contexts
             modelBuilder.Entity<Class>()
                 .Property(p => p.ClassName)
                 .HasMaxLength(100);
+
+            modelBuilder.Entity<Class>()
+                .Property(p => p.Rowversion)
+                .IsRowVersion();
+
+            modelBuilder.Entity<Teacher>()
+                .Property(p => p.Rowversion)
+                .IsRowVersion();
+
+            modelBuilder.Entity<Student>()
+                .Property(p => p.Rowversion)
+                .IsRowVersion();
         }
     }
 }

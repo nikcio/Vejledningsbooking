@@ -8,6 +8,6 @@ namespace Vejledningsbooking.Application.UnitOfWorks.Bases
 {
     public interface IBaseAsyncUnitOfWork
     {
-        Task CompleteAsync();
+        Task<bool> CompleteAsync();
     }
 }

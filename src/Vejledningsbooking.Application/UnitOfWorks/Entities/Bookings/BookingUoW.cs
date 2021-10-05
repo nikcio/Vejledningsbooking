@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,17 @@ namespace Vejledningsbooking.Application.UnitOfWorks.Entities.Bookings
             this.bookingRepository = bookingRepository;
         }
 
-        public async Task CompleteAsync()
+        public async Task<bool> CompleteAsync()
         {
-            await context.Context.SaveChangesAsync();
+            try
+            {
+                await context.Context.SaveChangesAsync();
+                return true;
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return false;
+            }
         }
     }
 }

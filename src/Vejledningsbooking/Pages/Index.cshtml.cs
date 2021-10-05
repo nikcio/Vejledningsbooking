@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Vejledningsbooking.Pages
+namespace Vejledningsbooking.WebUI.Pages
 {
     public class IndexModel : PageModel
     {

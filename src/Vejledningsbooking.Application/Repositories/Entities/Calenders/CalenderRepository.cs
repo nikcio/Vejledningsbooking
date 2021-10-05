@@ -24,11 +24,14 @@ namespace Vejledningsbooking.Application.Repositories.Entities.Calenders
         {
             var result = await base.GetById(id);
 
-            await dbContext.Context.Entry(result)
-                .Collection(p => p.BookingWindows)
-                .Query()
-                .Include(b => b.Bookings)
-                .LoadAsync();
+            if(result != null)
+            {
+                await dbContext.Context.Entry(result)
+                    .Collection(p => p.BookingWindows)
+                    .Query()
+                    .Include(b => b.Bookings)
+                    .LoadAsync();
+            }
 
             return result;
         }

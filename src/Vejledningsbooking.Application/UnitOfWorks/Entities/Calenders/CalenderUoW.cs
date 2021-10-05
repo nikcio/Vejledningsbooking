@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,17 @@ namespace Vejledningsbooking.Application.UnitOfWorks.Entities.Calenders
             CalenderRepository = calenderRepository;
         }
 
-        public async Task CompleteAsync()
+        public async Task<bool> CompleteAsync()
         {
-            await context.Context.SaveChangesAsync();
+            try
+            {
+                await context.Context.SaveChangesAsync();
+                return true;
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return false;
+            }
         }
     }
 }

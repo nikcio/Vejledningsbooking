@@ -5,17 +5,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Vejledningsbooking.Domain.Contexts;
+using Vejledningsbooking.Domain.Entities;
 
 namespace Vejledningsbooking.Application.Repositories.Bases
 {
     public class BaseAsyncRepository<TEntity> : IBaseAsyncRepository<TEntity> where TEntity : class
     {
         internal DbSet<TEntity> DbSet;
+        private readonly IVejledningsbookingDbContext dbContext;
         public readonly ILogger logger;
 
         public BaseAsyncRepository(IVejledningsbookingDbContext dbContext, ILogger logger)
         {
             DbSet = dbContext.Context.Set<TEntity>();
+            this.dbContext = dbContext;
             this.logger = logger;
         }
 
@@ -76,6 +79,11 @@ namespace Vejledningsbooking.Application.Repositories.Bases
                 logger.LogError(e, $"Remove failed on {typeof(TEntity)}");
                 return null;
             }
+        }
+
+        public virtual void StateModified(Booking booking)
+        {
+            dbContext.Context.Entry(booking).State = EntityState.Modified;
         }
 
     }

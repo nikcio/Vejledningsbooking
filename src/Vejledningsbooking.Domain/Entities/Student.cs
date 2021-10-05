@@ -11,5 +11,7 @@ namespace Vejledningsbooking.Domain.Entities
         public int Id { get; set; }
         public virtual IEnumerable<Booking> Bookings { get; set; }
         public virtual IEnumerable<Class> Classes { get; set; }
+        public byte[] Rowversion { get; set; }
+
     }
 }

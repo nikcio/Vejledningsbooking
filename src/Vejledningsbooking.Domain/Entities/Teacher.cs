@@ -9,6 +9,8 @@ namespace Vejledningsbooking.Domain.Entities
     public class Teacher : IUser
     {
         public int Id { get; set; }
-        public virtual IEnumerable<Class> Classes { get; set; }  // SELECT * FROM Docker;
+        public virtual IEnumerable<Class> Classes { get; set; }
+        public byte[] Rowversion { get; set; }
+
     }
 }

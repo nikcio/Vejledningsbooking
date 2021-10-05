@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Vejledningsbooking
+namespace Vejledningsbooking.WebUI
 {
     public class Program
     {

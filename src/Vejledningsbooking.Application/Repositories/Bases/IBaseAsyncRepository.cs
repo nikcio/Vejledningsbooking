@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Vejledningsbooking.Domain.Entities;
 
 namespace Vejledningsbooking.Application.Repositories.Bases
 {
@@ -9,5 +10,6 @@ namespace Vejledningsbooking.Application.Repositories.Bases
         Task<IEnumerable<TEntity>> GetAll();
         Task<TEntity> GetById(int id);
         Task<bool> Remove(TEntity entity);
+        void StateModified(Booking booking);
     }
 }

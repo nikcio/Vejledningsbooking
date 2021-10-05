@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vejledningsbooking.Domain.Interfaces;
 
-namespace Vejledningsbooking.Domain.Entities
+namespace Vejledningsbooking.Domain.Dtos
 {
-    public class Calender
+    public class CalenderDto : ICalender
     {
         public int Id { get; set; }
         public int ClassId { get; set; }
-        public virtual Class Class { get; set; }
-        public virtual IEnumerable<BookingWindow> BookingWindows { get; set; }
         public byte[] Rowversion { get; set; }
 
     }
